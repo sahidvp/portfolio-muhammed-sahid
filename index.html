@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammed Sahid VP | Mobile Application Developer & Software Engineer</title>
+  <meta name="description" content="Personal Portfolio of Muhammed Sahid VP – Software Engineer, Flutter & Dart Specialist, Android Developer, and Data Structures Enthusiast.">
+  <meta name="author" content="Muhammed Sahid VP">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen relative text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- Ambient Decorative Background Glows -->
+  <div class="ambient-glow w-[500px] h-[500px] bg-blue-600/20 top-[-100px] left-[-150px]"></div>
+  <div class="ambient-glow w-[600px] h-[600px] bg-indigo-600/15 top-[30%] right-[-200px]"></div>
+  <div class="ambient-glow w-[550px] h-[550px] bg-purple-600/15 bottom-[10%] left-[-100px]"></div>
+
+  <!-- Sticky Glassmorphic Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-blue-600/30 group-hover:scale-105 transition-transform">
+          MS
+        </div>
+        <div>
+          <div class="font-extrabold text-base tracking-tight text-white group-hover:text-blue-400 transition-colors user-name-text">
+            Muhammed Sahid VP
+          </div>
+          <div class="text-[11px] font-mono text-slate-400 tracking-wider">
+            MOBILE & SOFTWARE DEV
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800 backdrop-blur-md">
+        <a href="#about" class="px-4 py-2 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800 transition-all">About</a>
+        <a href="#skills" class="px-4 py-2 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800 transition-all">Skills</a>
+        <a href="#projects" class="px-4 py-2 rounded-full text-xs font-semibold text-white bg-blue-600/20 border border-blue-500/40 hover:bg-blue-600/30 transition-all">Enlarged Projects</a>
+        <a href="#experience" class="px-4 py-2 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800 transition-all">Experience & Journey</a>
+        <a href="#contact" class="px-4 py-2 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800 transition-all">Contact</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="hidden md:flex items-center gap-3">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" aria-label="Toggle Theme" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition-all cursor-pointer">
+          <i data-lucide="sun" class="w-4 h-4 theme-icon-sun"></i>
+          <i data-lucide="moon" class="w-4 h-4 theme-icon-moon hidden"></i>
+        </button>
+
+        <!-- GitHub Profile -->
+        <a href="https://github.com/sahidvp" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition-all" title="GitHub Profile">
+          <i data-lucide="github" class="w-4 h-4"></i>
+        </a>
+
+        <!-- Connect Button -->
+        <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-xs tracking-wide shadow-lg shadow-blue-600/25 transition-all hover:scale-105 active:scale-95">
+          Let's Talk
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex md:hidden items-center gap-2">
+        <button id="theme-toggle-mobile" aria-label="Toggle Theme" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+          <i data-lucide="sun" class="w-4 h-4 theme-icon-sun"></i>
+          <i data-lucide="moon" class="w-4 h-4 theme-icon-moon hidden"></i>
+        </button>
+        <button id="mobile-menu-btn" aria-label="Open Navigation" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-nav-menu" class="fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-xl flex flex-col justify-between p-6 hidden">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold">MS</div>
+          <span class="font-bold text-white text-base">Muhammed Sahid VP</span>
+        </div>
+        <button id="mobile-nav-close" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-4 mt-8">
+        <a href="#hero" class="mobile-nav-link text-lg font-semibold text-slate-300 hover:text-blue-400 py-2 border-b border-slate-900">Home</a>
+        <a href="#about" class="mobile-nav-link text-lg font-semibold text-slate-300 hover:text-blue-400 py-2 border-b border-slate-900">About & Bio</a>
+        <a href="#skills" class="mobile-nav-link text-lg font-semibold text-slate-300 hover:text-blue-400 py-2 border-b border-slate-900">Technical Skills</a>
+        <a href="#projects" class="mobile-nav-link text-lg font-semibold text-blue-400 py-2 border-b border-slate-900 flex items-center justify-between">
+          <span>Enlarged Projects</span>
+          <span class="text-xs px-2 py-0.5 rounded bg-blue-500/20 text-blue-300">Featured</span>
+        </a>
+        <a href="#experience" class="mobile-nav-link text-lg font-semibold text-slate-300 hover:text-blue-400 py-2 border-b border-slate-900">Experience & Journey</a>
+        <a href="#contact" class="mobile-nav-link text-lg font-semibold text-slate-300 hover:text-blue-400 py-2">Get in Touch</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-slate-900 flex flex-col gap-3">
+      <div class="text-xs text-slate-400 font-mono">sahidsai071@gmail.com</div>
+      <a href="https://github.com/sahidvp" target="_blank" class="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 text-center font-medium text-sm flex items-center justify-center gap-2">
+        <i data-lucide="github" class="w-4 h-4"></i> GitHub Profile
+      </a>
+    </div>
+  </div>
+
+  <main class="relative z-10 pt-28">
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Availability Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs font-medium text-slate-300 backdrop-blur-md shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Available for Full-Time Roles & High-Impact Projects</span>
+          </div>
+
+          <!-- Main Hero Title -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.15]">
+            Engineering Fluid <br class="hidden sm:inline" />
+            <span class="gradient-text-blue">Mobile Experiences</span> & Scalable Systems.
+          </h1>
+
+          <!-- Dynamic Typed Subtitle -->
+          <div class="text-lg md:text-xl font-mono text-blue-400 font-semibold flex items-center justify-center lg:justify-start gap-2 h-8">
+            <i data-lucide="terminal" class="w-5 h-5 text-indigo-400"></i>
+            <span id="dynamic-role">Flutter & Dart Specialist</span>
+            <span class="inline-block w-2 h-5 bg-blue-400 animate-pulse"></span>
+          </div>
+
+          <!-- Description Bio -->
+          <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            I'm <strong class="text-white font-semibold user-name-text">Muhammed Sahid VP</strong>, a Software Engineer crafting high-performance cross-platform mobile apps with Flutter & Dart, native Android, and clean architecture. I turn complex logic into silky-smooth, 60 FPS user journeys.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold text-sm tracking-wide shadow-xl shadow-blue-600/30 flex items-center gap-2.5 transition-all hover:scale-105 active:scale-95">
+              <i data-lucide="layers" class="w-4 h-4"></i>
+              <span>Explore Enlarged Projects</span>
+            </a>
+            
+            <a href="#experience" class="px-6 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold text-sm flex items-center gap-2 transition-all hover:border-slate-700">
+              <i data-lucide="briefcase" class="w-4 h-4 text-blue-400"></i>
+              <span>View Experience</span>
+            </a>
+
+            <a href="https://github.com/sahidvp" target="_blank" rel="noopener noreferrer" class="px-4 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition-all" title="Visit sahidvp GitHub">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+          </div>
+
+          <!-- Social Proof & Quick Email -->
+          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-400 font-mono">
+            <div class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-blue-400"></i>
+              <span>Kerala, India</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i>
+              <a href="mailto:sahidsai071@gmail.com" class="hover:underline user-email-text">sahidsai071@gmail.com</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="git-branch" class="w-4 h-4 text-purple-400"></i>
+              <span>FVM & Clean Arch</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Interactive Visual Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md">
+            
+            <!-- Animated Background Glow behind card -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-purple-600/30 rounded-3xl blur-2xl -z-10 animate-pulse-subtle"></div>
+            
+            <!-- Profile Card -->
+            <div class="glass-panel rounded-3xl p-6 md:p-8 border border-slate-800 shadow-2xl space-y-6">
+              
+              <!-- Card Top Header -->
+              <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div class="flex items-center gap-3">
+                  <div class="relative">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-black text-2xl shadow-md">
+                      MS
+                    </div>
+                    <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-slate-900"></span>
+                  </div>
+                  <div>
+                    <h2 class="text-base font-bold text-white user-name-text">Muhammed Sahid VP</h2>
+                    <p class="text-xs text-blue-400 font-mono">github.com/sahidvp</p>
+                  </div>
+                </div>
+
+                <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 font-mono">
+                  v2026.1
+                </span>
+              </div>
+
+              <!-- Tech Highlights Stack -->
+              <div class="space-y-3">
+                <div class="text-xs uppercase tracking-wider font-bold text-slate-400 flex items-center gap-2">
+                  <i data-lucide="code" class="w-4 h-4 text-blue-400"></i> Core Competencies
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2">
+                    <i data-lucide="smartphone" class="w-4 h-4 text-blue-400"></i>
+                    <div>
+                      <div class="font-bold text-white">Flutter & Dart</div>
+                      <div class="text-[10px] text-slate-400">Cross-Platform</div>
+                    </div>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2">
+                    <i data-lucide="cpu" class="w-4 h-4 text-emerald-400"></i>
+                    <div>
+                      <div class="font-bold text-white">Java & DSA</div>
+                      <div class="text-[10px] text-slate-400">Algorithms & OOP</div>
+                    </div>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2">
+                    <i data-lucide="box" class="w-4 h-4 text-purple-400"></i>
+                    <div>
+                      <div class="font-bold text-white">BLoC & Riverpod</div>
+                      <div class="text-[10px] text-slate-400">State Management</div>
+                    </div>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-2">
+                    <i data-lucide="git-pull-request" class="w-4 h-4 text-amber-400"></i>
+                    <div>
+                      <div class="font-bold text-white">Clean Architecture</div>
+                      <div class="text-[10px] text-slate-400">SOLID & Modular</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Quick Code Preview -->
+              <div class="p-3.5 rounded-2xl bg-slate-950/90 border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
+                <div class="flex items-center justify-between text-slate-500 pb-2 border-b border-slate-900">
+                  <span class="text-[10px]">main.dart</span>
+                  <span class="text-[10px] text-emerald-400">// Flutter Clean Architecture</span>
+                </div>
+                <div class="pt-1 text-[11px] leading-relaxed">
+                  <span class="text-blue-400">void</span> <span class="text-amber-300">main</span>() {<br>
+                  &nbsp;&nbsp;WidgetsFlutterBinding.<span class="text-purple-400">ensureInitialized</span>();<br>
+                  &nbsp;&nbsp;initDependencyInjection();<br>
+                  &nbsp;&nbsp;<span class="text-blue-400">runApp</span>(<span class="text-purple-400">const</span> OmniMartApp());<br>
+                  }
+                </div>
+              </div>
+
+              <!-- Card Action Button -->
+              <a href="#contact" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs tracking-wide flex items-center justify-center gap-2 transition-all shadow-md">
+                <i data-lucide="send" class="w-4 h-4"></i> Get in Touch With Muhammed Sahid
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Metrics Bar -->
+      <div id="hero-stats-container" class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-16 pt-8 border-t border-slate-800/80">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT SECTION ===================== -->
+    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800/60">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase">Background & Philosophy</span>
+        <h2 class="text-3xl md:text-4xl font-black text-white">
+          Architecting Resilient Code & Fluid Interfaces
+        </h2>
+        <p class="text-sm md:text-base text-slate-400 leading-relaxed">
+          Driven by engineering curiosity, precision software design, and a dedication to craft cross-platform solutions that delight end-users.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
+            <i data-lucide="smartphone" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Cross-Platform Mobile Mastery</h3>
+          <p class="text-xs md:text-sm text-slate-400 leading-relaxed">
+            Deep expertise in Flutter & Dart, targeting iOS and Android from a single performant codebase. Committed to 60 FPS render loops, minimal APK sizes, and pixel-perfect design system translation.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
+            <i data-lucide="layers" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Clean Architecture & State Patterns</h3>
+          <p class="text-xs md:text-sm text-slate-400 leading-relaxed">
+            Structuring apps into distinct Presentation, Domain, and Data layers. Mastery of BLoC, Riverpod, and Provider guarantees decoupled, maintainable, and 100% testable code.
+          </p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Algorithmic & CS Rigor</h3>
+          <p class="text-xs md:text-sm text-slate-400 leading-relaxed">
+            Strong foundation in Java, Data Structures, and Algorithm complexity. Writing clean, efficient data pipelines and background synchronization services that respect device resources.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== TECHNICAL SKILLS SECTION ===================== -->
+    <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-slate-800/60">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase">Capabilities Matrix</span>
+          <h2 class="text-3xl md:text-4xl font-black text-white mt-1">
+            Technical Stack & Tooling
+          </h2>
+        </div>
+        <p class="text-xs md:text-sm text-slate-400 max-w-md">
+          A comprehensive breakdown of mobile development tools, backend integrations, programming languages, and engineering workflows.
+        </p>
+      </div>
+
+      <!-- Categories Container -->
+      <div id="skills-categories-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- ===================== ENLARGED PROJECTS SECTION (PRIMARY FOCUS) ===================== -->
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-slate-800/60 relative">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400 mb-2">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Featured Case Studies
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white">
+            Enlarged Project Showcase
+          </h2>
+          <p class="text-sm md:text-base text-slate-400 mt-2 max-w-xl">
+            In-depth case studies highlighting mobile engineering, clean architecture, performance optimizations, and algorithmic problem solving.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-2 bg-slate-900/80 p-1.5 rounded-2xl border border-slate-800 backdrop-blur-md self-start lg:self-auto">
+          <button data-filter="all" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition-all cursor-pointer">
+            All Projects
+          </button>
+          <button data-filter="mobile" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900/60 text-slate-400 hover:text-white transition-all cursor-pointer">
+            Flutter & Mobile
+          </button>
+          <button data-filter="systems" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900/60 text-slate-400 hover:text-white transition-all cursor-pointer">
+            DSA & Java
+          </button>
+          <button data-filter="web" class="project-filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900/60 text-slate-400 hover:text-white transition-all cursor-pointer">
+            Full-Stack Web
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Container -->
+      <div id="projects-container" class="space-y-12">
+        <!-- Rendered dynamically by app.js with rich phone mockups & deep-dive triggers -->
+      </div>
+
+    </section>
+
+    <!-- ===================== ENLARGED EXPERIENCE & JOURNEY SECTION ===================== -->
+    <section id="experience" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-slate-800/60">
+      
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase">Career & Milestones</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mt-1">
+            Enlarged Experience & Journey
+          </h2>
+          <p class="text-sm md:text-base text-slate-400 mt-2 max-w-xl">
+            Detailed breakdown of engineering roles, production deliveries, leadership, and computer science foundations.
+          </p>
+        </div>
+
+        <!-- Filter tabs for experience -->
+        <div class="flex items-center gap-2 bg-slate-900/80 p-1.5 rounded-2xl border border-slate-800 backdrop-blur-md self-start lg:self-auto">
+          <button data-exp="all" class="exp-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition-all cursor-pointer">
+            All Journey
+          </button>
+          <button data-exp="work" class="exp-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900/60 text-slate-400 hover:text-white transition-all cursor-pointer">
+            Engineering Roles
+          </button>
+          <button data-exp="education" class="exp-tab-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900/60 text-slate-400 hover:text-white transition-all cursor-pointer">
+            Education
+          </button>
+        </div>
+      </div>
+
+      <!-- Experience Timeline Container -->
+      <div class="relative">
+        <div class="timeline-stem"></div>
+        <div id="experience-timeline-container" class="space-y-4">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================== CONTACT & COLLABORATION SECTION ===================== -->
+    <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-slate-800/60">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Contact Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase">Get In Touch</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">
+            Let's Build Something <br class="hidden sm:inline" />
+            <span class="gradient-text-blue">Extraordinary Together</span>
+          </h2>
+          <p class="text-sm md:text-base text-slate-400 leading-relaxed">
+            Whether you are looking for a high-impact Mobile Application Developer, need a Flutter architecture consultant, or want to discuss a full-stack opportunity, my inbox is always open.
+          </p>
+
+          <!-- Contact Cards -->
+          <div class="space-y-3 pt-2">
+            
+            <!-- Email Item with Copy Button -->
+            <div class="glass-panel p-4 rounded-2xl border border-slate-800 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] text-slate-400 uppercase font-mono">Email Direct</div>
+                  <a href="mailto:sahidsai071@gmail.com" class="text-sm font-bold text-white hover:text-blue-400 transition-colors user-email-text">
+                    sahidsai071@gmail.com
+                  </a>
+                </div>
+              </div>
+              <button id="copy-email-btn" title="Copy Email Address" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 hover:bg-slate-800 text-xs font-mono text-slate-300 hover:text-white transition-all flex items-center gap-1 cursor-pointer">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy
+              </button>
+            </div>
+
+            <!-- Copy notification toast -->
+            <div id="copy-feedback" class="text-xs text-emerald-400 font-mono transition-opacity opacity-0 px-2 flex items-center gap-1">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i> Email copied to clipboard!
+            </div>
+
+            <!-- GitHub Item -->
+            <div class="glass-panel p-4 rounded-2xl border border-slate-800 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
+                  <i data-lucide="github" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] text-slate-400 uppercase font-mono">GitHub Repositories</div>
+                  <div class="text-sm font-bold text-white font-mono">github.com/sahidvp</div>
+                </div>
+              </div>
+              <a href="https://github.com/sahidvp" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 hover:bg-slate-800 text-xs font-mono text-slate-300 hover:text-white transition-all flex items-center gap-1">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Visit
+              </a>
+            </div>
+
+            <!-- Location -->
+            <div class="glass-panel p-4 rounded-2xl border border-slate-800 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-[11px] text-slate-400 uppercase font-mono">Based In</div>
+                <div class="text-sm font-bold text-white">Kerala, India (Open to Remote / Relocation)</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel rounded-3xl p-6 md:p-8 border border-slate-800 shadow-2xl">
+            <h3 class="text-xl font-bold text-white mb-2">Send a Message</h3>
+            <p class="text-xs md:text-sm text-slate-400 mb-6">
+              Fill in your details below to start a conversation or request a quote for your project.
+            </p>
+
+            <form id="portfolio-contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label for="sender-name" class="text-xs font-semibold text-slate-300">Your Name</label>
+                  <input type="text" id="sender-name" required placeholder="e.g. Alex Smith" class="w-full px-4 py-3 rounded-xl bg-slate-950/70 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white placeholder-slate-500 text-xs md:text-sm outline-none transition-all">
+                </div>
+                <div class="space-y-1.5">
+                  <label for="sender-email" class="text-xs font-semibold text-slate-300">Your Email</label>
+                  <input type="email" id="sender-email" required placeholder="alex@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-950/70 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white placeholder-slate-500 text-xs md:text-sm outline-none transition-all">
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="sender-subject" class="text-xs font-semibold text-slate-300">Subject / Project Type</label>
+                <input type="text" id="sender-subject" required placeholder="Flutter Mobile App / Job Opportunity / Freelance" class="w-full px-4 py-3 rounded-xl bg-slate-950/70 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white placeholder-slate-500 text-xs md:text-sm outline-none transition-all">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="sender-message" class="text-xs font-semibold text-slate-300">Message</label>
+                <textarea id="sender-message" rows="4" required placeholder="Describe your project goals, scope, or opportunity..." class="w-full px-4 py-3 rounded-xl bg-slate-950/70 border border-slate-800 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white placeholder-slate-500 text-xs md:text-sm outline-none transition-all resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 transition-all hover:scale-[1.01] active:scale-[0.99] cursor-pointer">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Send Message to Muhammed Sahid VP</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== PROJECT DEEP-DIVE MODAL ===================== -->
+  <div id="project-modal" class="modal-backdrop fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div class="modal-content-box glass-panel rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-slate-700/80 p-6 md:p-8 relative shadow-2xl">
+      
+      <!-- Close Button -->
+      <button id="modal-close-btn" aria-label="Close Project Modal" class="absolute top-5 right-5 p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Content Body (Injected by JS) -->
+      <div id="modal-body-content">
+        <!-- Rendered by window.openProjectModal -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
+          MS
+        </div>
+        <div>
+          <div class="text-sm font-bold text-white user-name-text">Muhammed Sahid VP</div>
+          <div class="text-xs text-slate-500">Mobile Application Developer & Software Engineer</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs text-slate-400">
+        <a href="#hero" class="hover:text-white transition-colors">Home</a>
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </div>
+
+      <div class="text-xs text-slate-500 font-mono text-center md:text-right">
+        © 2026 Muhammed Sahid VP. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
