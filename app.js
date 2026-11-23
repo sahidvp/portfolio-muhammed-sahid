@@ -175,21 +175,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div class="grid grid-cols-2 gap-2">
                   <div class="p-2 rounded-lg bg-slate-900/80 border border-slate-800 text-[10px]">
-                    <div class="text-slate-400">Arch Pattern</div>
-                    <div class="font-bold text-blue-400 font-mono">Clean / BLoC</div>
+                    <div class="text-slate-400">Architecture</div>
+                    <div class="font-bold text-blue-400 font-mono text-[11px] truncate">${project.archPattern || 'Clean Arch'}</div>
                   </div>
                   <div class="p-2 rounded-lg bg-slate-900/80 border border-slate-800 text-[10px]">
-                    <div class="text-slate-400">Performance</div>
-                    <div class="font-bold text-emerald-400 font-mono">Zero Jitter</div>
+                    <div class="text-slate-400">State Engine</div>
+                    <div class="font-bold text-emerald-400 font-mono text-[11px] truncate">${project.stateMgmt || 'GetX / BLoC'}</div>
                   </div>
                 </div>
                 <div class="p-2.5 rounded-lg bg-slate-950/70 border border-slate-800 text-[10px] space-y-1">
                   <div class="flex justify-between text-slate-400">
-                    <span>Offline Sync</span>
-                    <span class="text-emerald-400 font-mono">Active (Hive DB)</span>
+                    <span>Sync & Telemetry</span>
+                    <span class="text-emerald-400 font-mono font-medium">${project.syncStatus || 'Active Stream'}</span>
                   </div>
                   <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
-                    <div class="bg-blue-500 h-1.5 rounded-full w-4/5"></div>
+                    <div class="bg-gradient-to-r from-blue-500 to-emerald-400 h-1.5 rounded-full w-5/6"></div>
                   </div>
                 </div>
               </div>
@@ -198,9 +198,9 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="pt-2 border-t border-slate-800 flex justify-between items-center text-[10px] text-slate-400">
                 <div class="flex items-center gap-1">
                   <i data-lucide="smartphone" class="w-3 h-3 text-blue-400"></i>
-                  <span>Android & iOS Ready</span>
+                  <span>${project.platformTag || 'Android & iOS Ready'}</span>
                 </div>
-                <span class="text-blue-400 font-mono font-semibold">FVM 3.x</span>
+                <span class="text-blue-400 font-mono font-semibold">Flutter Native</span>
               </div>
             </div>
           </div>
@@ -215,31 +215,31 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="browser-dot bg-emerald-500"></div>
               <div class="browser-url-bar">
                 <i data-lucide="lock" class="w-2.5 h-2.5 mr-1 text-emerald-400"></i>
-                https://github.com/sahidvp/${project.id}
+                ${project.repoUrl || 'https://github.com/sahidvp/' + project.id}
               </div>
             </div>
             <div class="p-6 bg-slate-950/90 text-left font-mono">
               <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
                 <span class="text-xs text-blue-400 font-bold flex items-center gap-2">
-                  <i data-lucide="terminal" class="w-4 h-4"></i> ${project.title.split('–')[0]} Core Engine
+                  <i data-lucide="terminal" class="w-4 h-4"></i> ${project.title.split('–')[0]} SPA
                 </span>
                 <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                  DSA Java / OOP
+                  ${project.platformTag || 'React + Vite'}
                 </span>
               </div>
               <div class="space-y-2 text-xs text-slate-300">
-                <p class="text-slate-400">// Algorithmic Visualization Engine</p>
-                <p><span class="text-purple-400">class</span> <span class="text-amber-300">GraphPathfinder</span> <span class="text-blue-400">&lt;T&gt;</span> {</p>
-                <p class="pl-4 text-slate-300"><span class="text-purple-400">public</span> List&lt;Node&gt; <span class="text-blue-300">findShortestPath</span>(Node start, Node target) {</p>
-                <p class="pl-8 text-emerald-400 font-semibold">// Dijkstra & A* with Min-PriorityQueue</p>
-                <p class="pl-8 text-slate-400">PriorityQueue&lt;DistancePair&gt; pq = <span class="text-purple-400">new</span> PriorityQueue&lt;&gt;();</p>
-                <p class="pl-8 text-slate-300">pq.add(<span class="text-purple-400">new</span> DistancePair(start, 0.0));</p>
-                <p class="pl-4 text-slate-300">}</p>
+                <p class="text-slate-400">// Modern React Component Architecture</p>
+                <p><span class="text-purple-400">export default function</span> <span class="text-amber-300">ResortExperience</span>() {</p>
+                <p class="pl-4 text-slate-300"><span class="text-purple-400">const</span> [selectedSuite, setSuite] = <span class="text-blue-300">useState</span>(<span class="text-emerald-400">"deluxe-ocean"</span>);</p>
+                <p class="pl-4 text-slate-400">// Dynamic Booking & Real-time Room Availability</p>
+                <p class="pl-4 text-slate-300"><span class="text-purple-400">return</span> (</p>
+                <p class="pl-8 text-blue-300">&lt;<span class="text-rose-400">ResortHero</span> suite={selectedSuite} onBook={handleReservation} /&gt;</p>
+                <p class="pl-4 text-slate-300">);</p>
                 <p>}</p>
               </div>
               <div class="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center text-[10px] text-slate-400">
-                <span>Time Complexity: O((V + E) log V)</span>
-                <span class="text-blue-400">JavaFX & Web Canvas</span>
+                <span>Performance: Sub-second HMR & 60 FPS</span>
+                <span class="text-blue-400">Tailwind + Vite</span>
               </div>
             </div>
           </div>
@@ -291,10 +291,30 @@ document.addEventListener("DOMContentLoaded", () => {
                   <i data-lucide="maximize-2" class="w-4 h-4"></i>
                   <span>Enlarge Deep Dive</span>
                 </button>
-                <a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 text-slate-200 font-medium text-sm flex items-center gap-2 transition-all">
-                  <i data-lucide="github" class="w-4 h-4"></i>
-                  <span>GitHub Repository</span>
-                </a>
+                ${project.playStoreUrl ? `
+                  <a href="${project.playStoreUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 font-medium text-sm flex items-center gap-2 transition-all">
+                    <i data-lucide="play" class="w-4 h-4 text-emerald-400"></i>
+                    <span>Google Play Store</span>
+                  </a>
+                ` : ''}
+                ${project.repoUrl && !project.isEnterprise ? `
+                  <a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 text-slate-200 font-medium text-sm flex items-center gap-2 transition-all">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    <span>GitHub Repository</span>
+                  </a>
+                ` : ''}
+                ${project.adminRepoUrl ? `
+                  <a href="${project.adminRepoUrl}" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-xl bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/40 text-purple-300 font-medium text-xs flex items-center gap-1.5 transition-all">
+                    <i data-lucide="layout-dashboard" class="w-3.5 h-3.5 text-purple-400"></i>
+                    <span>Admin App</span>
+                  </a>
+                ` : ''}
+                ${project.isEnterprise && !project.playStoreUrl ? `
+                  <span class="px-3.5 py-2 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-400 text-xs font-mono flex items-center gap-1.5" title="${project.enterpriseNote || 'Enterprise System'}">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-400"></i>
+                    <span>Enterprise System</span>
+                  </span>
+                ` : ''}
               </div>
             </div>
 
@@ -419,13 +439,29 @@ document.addEventListener("DOMContentLoaded", () => {
         <!-- Modal Action Footer -->
         <div class="pt-4 border-t border-slate-800 flex flex-wrap justify-between items-center gap-3">
           <div class="text-xs text-slate-400 font-mono">
-            Repository: github.com/sahidvp/${project.id}
+            ${project.enterpriseNote 
+              ? `<span class="text-blue-400 font-semibold flex items-center gap-1.5"><i data-lucide="building-2" class="w-4 h-4"></i>${project.enterpriseNote}</span>` 
+              : `Repository: <a href="${project.repoUrl}" target="_blank" class="text-blue-400 hover:underline">github.com/sahidvp/${project.repoUrl ? project.repoUrl.split('/').pop() : project.id}</a>`}
           </div>
-          <div class="flex items-center gap-3">
-            <a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs md:text-sm flex items-center gap-2 transition-all">
-              <i data-lucide="github" class="w-4 h-4"></i>
-              <span>View Source Code</span>
-            </a>
+          <div class="flex flex-wrap items-center gap-3">
+            ${project.playStoreUrl ? `
+              <a href="${project.playStoreUrl}" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs md:text-sm flex items-center gap-2 shadow-lg shadow-emerald-600/30 transition-all">
+                <i data-lucide="play" class="w-4 h-4"></i>
+                <span>Open in Google Play</span>
+              </a>
+            ` : ''}
+            ${project.repoUrl && !project.isEnterprise ? `
+              <a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs md:text-sm flex items-center gap-2 shadow-lg shadow-blue-600/30 transition-all">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>View Source Code</span>
+              </a>
+            ` : ''}
+            ${project.adminRepoUrl ? `
+              <a href="${project.adminRepoUrl}" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs md:text-sm flex items-center gap-2 shadow-lg shadow-purple-600/30 transition-all">
+                <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+                <span>Admin App Repo</span>
+              </a>
+            ` : ''}
           </div>
         </div>
       </div>

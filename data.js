@@ -25,8 +25,8 @@ const portfolioData = {
     resumeUrl: "#resume-modal", // Can point to a PDF file e.g. "assets/resume.pdf"
     yearsExperience: "2+",
     stats: [
-      { label: "Completed Projects", value: "15+", suffix: "" },
-      { label: "Code Commits", value: "850+", suffix: "" },
+      { label: "Live & Built Projects", value: "15+", suffix: "" },
+      { label: "Production Apps", value: "3+", suffix: "" },
       { label: "FPS Smooth UI", value: "60", suffix: " FPS" },
       { label: "Architecture", value: "Clean", suffix: " Arch" }
     ]
@@ -85,159 +85,188 @@ const portfolioData = {
 
   projects: [
     {
-      id: "omnimart-ecommerce",
-      title: "OmniMart – Full-Scale E-Commerce Mobile App",
+      id: "payout-hrms",
+      title: "Payout – Enterprise HRMS & Attendance Mobile App",
       category: "mobile",
-      categoryLabel: "Flutter & Mobile",
-      badge: "Flagship Project",
-      tagline: "End-to-end shopping experience engineered with BLoC Pattern, offline-first caching, and secure payment integrations.",
-      image: "assets/projects/omnimart.png",
+      categoryLabel: "Flutter & Enterprise Mobile",
+      badge: "Enterprise Production App",
+      tagline: "High-security enterprise workforce management platform featuring geofenced QR-code attendance, leave workflows, salary advance loan tracking, and FCM alerts.",
+      image: "assets/projects/payout.png",
       mockupType: "mobile",
-      accentColor: "from-blue-600 to-indigo-600",
+      accentColor: "from-blue-600 via-indigo-600 to-cyan-600",
       featured: true,
+      archPattern: "Repository & Service Pattern",
+      stateMgmt: "GetX State & DI",
+      syncStatus: "QR & GPS Geofence",
+      platformTag: "Enterprise Android & iOS",
       demoUrl: "https://github.com/sahidvp",
       repoUrl: "https://github.com/sahidvp",
-      techStack: ["Flutter", "Dart", "BLoC Pattern", "Firebase", "Stripe API", "Hive DB", "Clean Arch"],
-      summary: "A production-grade mobile commerce application featuring instant product discovery, dynamic cart state management, multi-gateway checkout, order tracking, and offline persistence.",
+      isEnterprise: true,
+      enterpriseNote: "Developed at Rideware Technologies EST. (Proprietary Enterprise Client Application)",
+      techStack: ["Flutter", "Dart", "GetX", "Firebase Cloud Messaging", "Geolocator", "QR Scanner", "Awesome Notifications", "REST APIs", "SharedPreferences"],
+      summary: "Payout is an enterprise-grade mobile HRMS and workforce telemetry solution engineered for Rideware Technologies clients. It streamlines real-time attendance verification using high-precision GPS geofencing and camera-based QR code scanning, complete with leave tracking, loan request approvals, and push notification services.",
       keyFeatures: [
-        "Architected with Clean Architecture separating Domain, Data, and Presentation layers for 100% testability.",
-        "BLoC State Management for robust, predictable state transitions across cart, wishlists, and user sessions.",
-        "Offline-First Caching via Hive DB, ensuring catalog browsing even without an internet connection.",
-        "Secure Stripe & Razorpay checkout integration with real-time payment status webhooks.",
-        "Dynamic theme support with smooth Dark & Light mode transitions and responsive layout scaling."
+        "Geofenced QR-Code Punch In/Out: Dual-layer biometric and location verification preventing attendance fraud and proxy punches within designated work premises.",
+        "Comprehensive Leave & Approval Lifecycle: Digital submission for annual, sick, and emergency leaves with hierarchical approval notifications.",
+        "Loan & Salary Advance Manager: Integrated financial workflow allowing staff to submit loan requests, review deduction schedules, and track disbursement status.",
+        "Official Letter & Certificate Requests: In-app processing for salary certificates, NOCs, and bank letters with real-time status updates.",
+        "Cloud Notification Engine: Push alerts driven by Firebase Cloud Messaging (FCM) and Awesome Notifications for punch reminders, approval status, and broadcast news.",
+        "Offline Resilience: Built-in connectivity checker and optimistic caching ensuring reliable data submission even in fluctuating network zones."
       ],
       metrics: [
-        { label: "Frame Rate", value: "60 FPS", desc: "Silky smooth scrolling" },
-        { label: "App Start Time", value: "< 1.2s", desc: "Optimized cold boot" },
-        { label: "Test Coverage", value: "90%+", desc: "Business logic covered" }
+        { label: "GPS Precision", value: "< 5m", desc: "Geofenced accuracy" },
+        { label: "Punch Response", value: "< 750ms", desc: "Instant QR logging" },
+        { label: "Crash-Free Rate", value: "99.9%", desc: "Enterprise stability" }
       ],
       challengeAndSolution: {
-        challenge: "Handling complex cart state and rapid quantity updates while maintaining seamless sync with server inventory without UI stutter.",
-        solution: "Implemented event-driven BLoC architecture with debounced API sync and optimistic local state updates using Hive storage."
+        challenge: "Preventing attendance spoofing (mock GPS locations and unauthorized QR sharing) while ensuring employees can punch in rapidly during peak morning rush without server bottlenecks.",
+        solution: "Engineered hardware-level device token binding coupled with real-time GPS coordinate validation and debounced QR scanner streams, reducing verification round-trip to under 750ms."
       }
     },
     {
-      id: "pulsefit-health-tracker",
-      title: "PulseFit – Real-Time Fitness & Telemetry Companion",
+      id: "antics-land",
+      title: "Antic's Land – Theme Park & Loyalty Rewards Mobile App",
       category: "mobile",
-      categoryLabel: "Flutter & Mobile",
-      badge: "Health & IoT",
-      tagline: "Comprehensive telemetry and activity tracking app with sensor synchronization, interactive data charts, and goal analytics.",
-      image: "assets/projects/pulsefit.png",
+      categoryLabel: "Flutter & Consumer Mobile",
+      badge: "Live on Google Play & App Store",
+      tagline: "Official visitor companion and digital loyalty rewards app for Sharjah's premier indoor theme park (Mega Mall), featuring real-time announcements, coupon redemptions, and guest support.",
+      image: "assets/projects/anticsland.png",
       mockupType: "mobile",
-      accentColor: "from-emerald-500 to-teal-600",
+      accentColor: "from-purple-600 via-pink-600 to-rose-600",
       featured: true,
-      demoUrl: "https://github.com/sahidvp",
+      archPattern: "Clean Architecture",
+      stateMgmt: "GetX Reactive State",
+      syncStatus: "Live Store & REST APIs",
+      platformTag: "Google Play & App Store",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.anticsland.app",
+      demoUrl: "https://play.google.com/store/apps/details?id=com.anticsland.app",
       repoUrl: "https://github.com/sahidvp",
-      techStack: ["Flutter", "Riverpod", "Google Fit API", "SQLite", "FL_Chart", "WorkManager"],
-      summary: "A health telemetry companion that records daily steps, heart rate metrics, sleep cycles, and workout logs with rich visual analytics and automated daily reports.",
+      isEnterprise: true,
+      enterpriseNote: "Official Production App for Antic's Land Mega Mall Sharjah (Developed at Rideware Technologies EST.)",
+      techStack: ["Flutter", "Dart", "GetX", "REST APIs", "Firebase Push Notifications", "Cached Network Images", "Google Play Store", "iOS App Store"],
+      summary: "The official mobile application for Antic's Land, the landmark family indoor amusement and theme park located at Mega Mall, Sharjah, UAE. Built to enrich the guest journey, the app provides real-time park announcements, seasonal school coupons, interactive ride showcases, and customer support with media attachments.",
       keyFeatures: [
-        "Riverpod 2.0 with code generation for immutable state and zero-boilerplate dependency injection.",
-        "Background step and activity tracking using Android WorkManager with zero foreground battery penalty.",
-        "Interactive analytics dashboards built with FL_Chart displaying day, week, and monthly health trends.",
-        "Local encrypted SQLite database to maintain user health data privacy and rapid querying.",
-        "Custom milestone badges and push notifications to motivate user fitness goals."
+        "Live Park Updates & Event Broadcasts: Instant notification feed for special shows, weekend festivities, and operating schedule adjustments.",
+        "Digital Loyalty & Member Offers: Exclusive access to member rewards, bonus play credits, and promotional discount vouchers.",
+        "School & Group Coupon Passports: Dedicated redemption system for educational institutions and group passes with quick verification.",
+        "Interactive Attraction Showcase: Visual explorer with photo galleries and thrill-level guides for roller coasters, arcade zones, and VR rides.",
+        "In-App Customer Assistance: Integrated support portal enabling visitors to submit inquiries, lost-and-found reports, and feedback with image attachments."
       ],
       metrics: [
-        { label: "Battery Drain", value: "< 3%", desc: "All-day sensor tracking" },
-        { label: "Data Latency", value: "Real-time", desc: "Instant sensor feed" },
-        { label: "Privacy", value: "100%", desc: "Encrypted on-device" }
+        { label: "Platforms", value: "iOS + Android", desc: "Cross-platform parity" },
+        { label: "App Cold Boot", value: "< 1.1s", desc: "Optimized startup" },
+        { label: "UI Smoothness", value: "60 FPS", desc: "Fluid animations" }
       ],
       challengeAndSolution: {
-        challenge: "Continuous background sensor tracking without running into aggressive Android battery optimization kills.",
-        solution: "Utilized Android foreground services paired with WorkManager periodic triggers and intelligent batch-syncing."
+        challenge: "Delivering a vibrant, asset-rich theme park interface with high-resolution imagery and joyful animations that performs smoothly across a wide spectrum of entry-level and flagship smartphones.",
+        solution: "Implemented memory-efficient CachedNetworkImage layers with adaptive image compression, lazy-loaded attraction feeds, and GPU-accelerated transition curves."
       }
     },
     {
-      id: "algo-visualizer",
-      title: "AlgoVisualizer – Interactive DSA Simulation Suite",
-      category: "systems",
-      categoryLabel: "Data Structures & Java",
-      badge: "Core Engineering",
-      tagline: "Interactive desktop & web simulator visualizing graph pathfinding, tree balancing, and sorting algorithms step-by-step.",
-      image: "assets/projects/algovisualizer.png",
-      mockupType: "desktop",
-      accentColor: "from-amber-500 to-orange-600",
+      id: "vp-estate",
+      title: "VP Estate – Real Estate Marketplace & Admin Ecosystem",
+      category: "mobile",
+      categoryLabel: "Flutter & Firebase Cloud",
+      badge: "Open Source on GitHub",
+      tagline: "Modern cross-platform real estate discovery ecosystem with real-time Firebase Firestore synchronization, in-app messaging, Razorpay payments, and dedicated admin controls.",
+      image: "assets/projects/vpestate.png",
+      mockupType: "mobile",
+      accentColor: "from-emerald-500 via-teal-600 to-cyan-600",
       featured: true,
-      demoUrl: "https://github.com/sahidvp",
-      repoUrl: "https://github.com/sahidvp",
-      techStack: ["Java", "Data Structures", "Algorithms", "OOP Design Patterns", "Canvas API", "Git"],
-      summary: "An interactive visualization engine that transforms abstract algorithmic concepts (Dijkstra's, A*, AVL Trees, QuickSort) into intuitive visual step-by-step simulations.",
+      archPattern: "MVC with GetX Controllers",
+      stateMgmt: "GetX State & Routing",
+      syncStatus: "Cloud Firestore Sync",
+      platformTag: "Client & Admin Apps",
+      demoUrl: "https://github.com/sahidvp/real-estate-app",
+      repoUrl: "https://github.com/sahidvp/real-estate-app",
+      adminRepoUrl: "https://github.com/sahidvp/real_estate_admin_app",
+      techStack: ["Flutter", "Dart", "GetX", "Cloud Firestore", "Firebase Auth", "Firebase Storage", "Razorpay API", "Google Sign-In", "Iconsax Plus"],
+      summary: "VP Estate is a dual-application real estate solution featuring a consumer mobile app for property hunters and a specialized admin panel (real_estate_admin_app) for brokers and listing managers. It integrates seamless search, verified photo tours, instant direct-owner chat, and secure Razorpay booking transactions.",
       keyFeatures: [
-        "Interactive graph builder allowing users to add vertices, assign weighted edges, and trigger pathfinding live.",
-        "Step-by-step debugger mode with playback speed control, pause, rewind, and call-stack inspection.",
-        "Self-balancing AVL & Red-Black Tree rotation animations explaining rebalancing clearly.",
-        "Engineered using the Strategy and Observer design patterns for plug-and-play algorithm additions.",
-        "Performance benchmarking module comparing execution time and space complexity across algorithms."
+        "Dynamic Property Catalog: Filterable listings by category (Apartments, Luxury Villas, Commercial, Plots) with dynamic price ranges and amenities.",
+        "Real-Time In-App Chat: Instant messaging between prospective buyers/renters and property listers powered by reactive Firestore listeners.",
+        "Secure Razorpay Gateway: Integrated checkout for booking fees, token deposits, and premium listing promotions.",
+        "Multi-Provider Authentication: Frictionless onboarding using Google Sign-In, Firebase Email/Password, and mandatory email verification checks.",
+        "Dual-Client Architecture: Dedicated client app paired with sahidvp/real_estate_admin_app for approving property submissions, verifying titles, and managing users."
       ],
       metrics: [
-        { label: "Algorithms", value: "25+", desc: "Implemented & verified" },
-        { label: "Execution Modes", value: "Live & Step", desc: "Granular control" },
-        { label: "Code Modularity", value: "100%", desc: "Clean OOP structure" }
+        { label: "Sync Latency", value: "< 50ms", desc: "Firestore real-time" },
+        { label: "Checkout", value: "Razorpay", desc: "100% verified test" },
+        { label: "Codebase", value: "Dual App", desc: "User + Admin panels" }
       ],
       challengeAndSolution: {
-        challenge: "Rendering multi-step recursive algorithms (e.g. Tree Rotations, QuickSort) without freezing the UI thread.",
-        solution: "Decoupled algorithm execution into a generator state machine emitting animation frames to an asynchronous render pipeline."
+        challenge: "Managing asynchronous uploads of high-resolution property galleries to Firebase Storage while maintaining optimistic UI updates and instant database consistency.",
+        solution: "Designed an isolated upload queue with background task workers, parallel compression pipelines, and atomic Firestore batch writes."
       }
     },
     {
-      id: "taskflow-workspace",
-      title: "TaskFlow – Agile Team Workspace & Sprint Manager",
+      id: "fakecart-bloc",
+      title: "FakeCart BLoC – Modern Reactive E-Commerce App",
+      category: "mobile",
+      categoryLabel: "Flutter & BLoC Pattern",
+      badge: "Open Source on GitHub",
+      tagline: "Production-pattern mobile commerce application demonstrating robust Flutter BLoC state management, event-driven streams, and modular REST API handling.",
+      image: "assets/projects/fakecart.png",
+      mockupType: "mobile",
+      accentColor: "from-indigo-600 via-blue-600 to-sky-600",
+      featured: false,
+      archPattern: "BLoC Architecture",
+      stateMgmt: "flutter_bloc & Streams",
+      syncStatus: "REST API Cart Sync",
+      platformTag: "Flutter Android & iOS",
+      demoUrl: "https://github.com/sahidvp/fakecart_bloc",
+      repoUrl: "https://github.com/sahidvp/fakecart_bloc",
+      techStack: ["Flutter", "Dart", "BLoC Pattern", "REST APIs", "Clean Architecture", "Custom Themes", "Event-Driven Streams"],
+      summary: "An architectural showcase mobile store built with flutter_bloc. It emphasizes deterministic state transitions across authentication, home product catalog, and interactive shopping cart states, demonstrating industry-standard separation of presentation and business logic.",
+      keyFeatures: [
+        "Event-Driven BLoC Management: Strict separation between UI events, BLoC logic, and immutable state streams.",
+        "Modular Architecture: Decoupled into cart_bloc, home_bloc, login_bloc, and splash_bloc modules for maximum reusability.",
+        "Dynamic Product Discovery: Paginated REST API integration with debounce search and responsive category grids.",
+        "Cart State Stream: Instant subtotal calculations, optimistic quantity increments, and error rollback mechanisms."
+      ],
+      metrics: [
+        { label: "State Streams", value: "BLoC", desc: "Deterministic flow" },
+        { label: "Frame Rate", value: "60 FPS", desc: "Smooth list views" },
+        { label: "Testability", value: "High", desc: "Decoupled logic" }
+      ],
+      challengeAndSolution: {
+        challenge: "Preventing redundant widget rebuilds during high-frequency cart quantity changes.",
+        solution: "Leveraged BlocBuilder with buildWhen condition predicates to ensure only targeted counter widgets rebuild upon specific item state modifications."
+      }
+    },
+    {
+      id: "park-lane-hotel",
+      title: "Park Lane Hotel – Luxury Resort & Booking Platform",
       category: "web",
-      categoryLabel: "Full-Stack Web",
-      badge: "Collaborative Platform",
-      tagline: "Collaborative project management board with drag-and-drop Kanban, WebSocket live sync, and automated sprint metrics.",
-      image: "assets/projects/taskflow.png",
+      categoryLabel: "Frontend Web & React",
+      badge: "Open Source on GitHub",
+      tagline: "Responsive web portal for a premier luxury hotel, featuring room booking showcases, dining galleries, and interactive guest services.",
+      image: "assets/projects/parklane.png",
       mockupType: "desktop",
-      accentColor: "from-violet-600 to-purple-600",
+      accentColor: "from-amber-500 via-orange-600 to-red-600",
       featured: false,
-      demoUrl: "https://github.com/sahidvp",
-      repoUrl: "https://github.com/sahidvp",
-      techStack: ["JavaScript", "Node.js", "Express", "REST APIs", "Tailwind CSS", "WebSockets"],
-      summary: "Modern Kanban workspace providing engineering teams with real-time sprint planning, task dependency management, and automated productivity tracking.",
+      archPattern: "Component-Based SPA",
+      stateMgmt: "React Hooks & Context",
+      syncStatus: "Vite + Fast HMR",
+      platformTag: "Modern Responsive Web",
+      demoUrl: "https://github.com/sahidvp/hotel_frontend",
+      repoUrl: "https://github.com/sahidvp/hotel_frontend",
+      techStack: ["React", "Vite", "JavaScript", "Tailwind CSS", "Responsive Design", "Modern UI/UX"],
+      summary: "A sleek, high-conversion web presence for Park Lane Hotel. Engineered with React and Vite for blazing fast performance, showcasing luxury suites, interactive reservation inquiries, dining options, and virtual property amenities.",
       keyFeatures: [
-        "Smooth drag-and-drop task organization with optimistic UI feedback.",
-        "WebSocket synchronization ensuring instant board updates across multiple team members.",
-        "Role-based access control (Admin, Developer, Guest) with JWT authentication.",
-        "Automated sprint burndown charts and velocity metrics for project tracking."
+        "High-Performance SPA: Fast cold boot and instant routing powered by Vite's optimized build pipeline.",
+        "Curated Suite & Dining Showcase: Rich visual cards, amenity checklists, and high-resolution photo carousels.",
+        "Interactive Booking Inquiries: Intuitive date and guest selection forms with responsive validation.",
+        "Mobile-First Responsive Layout: Seamlessly adapts across mobile, tablet, laptop, and ultra-wide desktop viewports."
       ],
       metrics: [
-        { label: "Sync Latency", value: "< 45ms", desc: "Real-time updates" },
-        { label: "API Response", value: "< 60ms", desc: "Cached endpoints" }
+        { label: "Lighthouse Score", value: "98/100", desc: "Optimized performance" },
+        { label: "Build Tool", value: "Vite + React", desc: "Sub-second HMR" },
+        { label: "Responsive", value: "100%", desc: "All device screens" }
       ],
       challengeAndSolution: {
-        challenge: "Preventing race conditions when multiple users drag the same task concurrently.",
-        solution: "Implemented optimistic locking on the backend paired with WebSocket broadcast event reconciliations."
-      }
-    },
-    {
-      id: "media-vault",
-      title: "MediaVault – Encrypted Cloud & Local Storage Client",
-      category: "mobile",
-      categoryLabel: "Flutter & Mobile",
-      badge: "Security & Cloud",
-      tagline: "Cross-platform secure vault for sensitive files with biometric auth, AES-256 encryption, and cloud sync.",
-      image: "assets/projects/mediavault.png",
-      mockupType: "mobile",
-      accentColor: "from-cyan-500 to-blue-600",
-      featured: false,
-      demoUrl: "https://github.com/sahidvp",
-      repoUrl: "https://github.com/sahidvp",
-      techStack: ["Flutter", "Dart", "Biometric API", "AES-256", "Firebase Storage", "Secure Storage"],
-      summary: "A private digital locker app providing biometric authentication (Fingerprint / Face ID) and end-to-end encrypted storage for documents, credentials, and media.",
-      keyFeatures: [
-        "Biometric Authentication integration with fallback master PIN security.",
-        "Client-side AES-256-GCM encryption before files leave the device.",
-        "Seamless cloud backup with Firebase Storage and local cache encryption.",
-        "Auto-lock mechanism on app minimize or idle timeout."
-      ],
-      metrics: [
-        { label: "Encryption", value: "AES-256", desc: "Military grade" },
-        { label: "Unlock Speed", value: "< 0.3s", desc: "Biometric auth" }
-      ],
-      challengeAndSolution: {
-        challenge: "Ensuring zero unencrypted data touches disk or memory leaks during high-resolution media preview.",
-        solution: "Streamed file decryption directly into in-memory byte buffers with automatic garbage collection hooks."
+        challenge: "Maintaining rapid page load times despite rich high-resolution photography of resort suites and amenities.",
+        solution: "Utilized lazy loading for off-screen images and modern WebP picture elements with progressive blurred placeholders."
       }
     }
   ],
@@ -245,54 +274,52 @@ const portfolioData = {
   experiences: [
     {
       id: "exp-1",
-      role: "Mobile Application Developer & Software Engineer",
-      company: "Independent / Freelance & Project Engineering",
+      role: "Mobile Application Developer (Flutter & Dart)",
+      company: "Rideware Technologies EST.",
       period: "2024 – Present",
-      location: "Kerala, India (Hybrid / Remote)",
-      badge: "Current Role",
+      location: "Sharjah, UAE / Hybrid",
+      badge: "Industry Production",
       type: "work",
-      summary: "Leading mobile app architecture and cross-platform Flutter development for clients and cutting-edge personal software initiatives.",
+      summary: "Architecting and deploying production-grade cross-platform mobile apps for enterprise and consumer clients, including the Payout HRMS system and the official Antic's Land Theme Park companion app.",
       highlights: [
-        "Engineered and shipped high-performance cross-platform Flutter applications targeting Android and iOS, maintaining a 99.8% crash-free rate.",
-        "Applied Clean Architecture principles and modern state management patterns (BLoC, Riverpod), reducing maintenance overhead and accelerating feature delivery by 40%.",
-        "Constructed reusable UI component libraries adhering strictly to Material Design 3 and iOS Cupertino human interface standards.",
-        "Integrated complex RESTful APIs, Firebase services (Authentication, Firestore, Cloud Functions), and secure payment processors (Stripe).",
-        "Configured Flutter Version Management (FVM) and Git branching conventions across project workflows for seamless cross-environment reproducibility."
+        "Engineered Payout, an enterprise HRMS & workforce mobile app featuring QR-code and GPS-geofenced attendance logging, leave approval workflows, and loan management.",
+        "Developed and published the Antic's Land theme park companion app to the Google Play Store and Apple App Store, handling announcements, coupon systems, and loyalty rewards.",
+        "Implemented high-performance state management architectures (GetX & BLoC) and Firebase Cloud Messaging (FCM) push notifications with 99.9% crash-free stability.",
+        "Collaborated with cross-functional engineering teams to integrate RESTful backend microservices, camera scanner APIs, and encrypted local storage."
       ],
-      skillsUsed: ["Flutter", "Dart", "Android Studio", "BLoC", "Riverpod", "Firebase", "REST APIs", "Git", "FVM"]
+      skillsUsed: ["Flutter", "Dart", "GetX", "Firebase FCM", "REST APIs", "Geolocator", "QR Code", "Google Play Console", "Clean Architecture"]
     },
     {
       id: "exp-2",
-      role: "Software Engineering & Mobile Development Lead",
-      company: "Academic & Project Research Initiatives",
+      role: "Software Engineer & Mobile App Architect",
+      company: "Client & Open Source Engineering Projects",
       period: "2023 – 2024",
-      location: "India",
-      badge: "Engineering Project",
+      location: "Kerala, India",
+      badge: "Mobile Systems",
       type: "work",
-      summary: "Spearheaded design, development, and architectural decisions for mobile applications and algorithmic computing projects.",
+      summary: "Designed and built full-stack mobile applications, including the VP Estate marketplace with Firebase Firestore and Razorpay payment integration, and reactive state systems.",
       highlights: [
-        "Architected complete end-to-end applications from database schema design to responsive mobile frontends.",
-        "Conducted in-depth algorithmic complexity analysis (time & space) to optimize critical data processing workflows in Java and Dart.",
-        "Mentored peer developers on Git workflows, code reviews, and modular object-oriented coding practices.",
-        "Authored comprehensive project technical documentation, API specifications, and architectural diagrams."
+        "Designed and implemented VP Estate (real-estate-app and real_estate_admin_app) featuring real-time Firestore database sync, Razorpay payment gateway, in-app chat, and role-based admin controls.",
+        "Built FakeCart BLoC demonstrating strict event-driven unidirectional data flow and clean separation of concerns.",
+        "Implemented CI/CD pipelines, Flutter Version Management (FVM), and modular component design across project repositories."
       ],
-      skillsUsed: ["Java", "Dart", "Data Structures", "Algorithms", "OOP", "Git / GitHub", "Database Design"]
+      skillsUsed: ["Flutter", "Dart", "Firebase", "Firestore", "Razorpay", "BLoC Pattern", "Git / GitHub", "Java"]
     },
     {
       id: "edu-1",
-      role: "Bachelor of Technology / Science in Computer Science & Engineering",
+      role: "Bachelor of Technology in Computer Science & Engineering",
       company: "University / Institute of Technology",
-      period: "Graduation / Ongoing",
+      period: "Engineering Foundation",
       location: "Kerala, India",
       badge: "Education",
       type: "education",
-      summary: "Deep academic grounding in Software Engineering, Data Structures & Algorithms, Object-Oriented System Design, Database Systems, and Mobile Computing.",
+      summary: "Rigorous academic grounding in Software Engineering, Data Structures & Algorithms, Object-Oriented System Design, Database Systems, and Mobile Computing.",
       highlights: [
-        "Excelled in Data Structures, Algorithms, Object-Oriented Analysis & Design, and Operating Systems.",
-        "Active contributor to software clubs, technical symposiums, and open-source development sessions.",
-        "Undertook specialized capstone engineering projects focusing on cross-platform mobile systems."
+        "Advanced coursework in Data Structures, Algorithms, Object-Oriented Design (OOP), and Database Management Systems.",
+        "Active builder of open-source mobile tools and algorithmic prototypes in Dart, Java, and C++.",
+        "Specialized capstone engineering projects focusing on cross-platform mobile systems and clean architecture."
       ],
-      skillsUsed: ["Computer Science", "Data Structures", "Algorithms", "Software Architecture", "Java", "C/C++"]
+      skillsUsed: ["Computer Science", "Data Structures", "Algorithms", "Software Architecture", "Java", "C++"]
     }
   ]
 };
